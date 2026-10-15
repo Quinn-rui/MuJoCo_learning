@@ -56,6 +56,7 @@ plt.legend()
 plt.grid(True)
 plt.tight_layout()
 plt.savefig("pd_kd_sweep.png", dpi=200)
+plt.show()
 
 plt.figure(figsize=(8, 4))
 # 实验 2:加入恒定外扰,对比纯 P 和 PD 的稳态误差。
@@ -70,3 +71,4 @@ plt.legend()
 plt.grid(True)
 plt.tight_layout()
 plt.savefig("pd_disturbance_error.png", dpi=200)
+plt.show()

@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+
+# 仿真输出图片（可由脚本重新生成）
+# 如果想把这些结果图也放进仓库展示，删掉下面这一行即可
+*.png
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store

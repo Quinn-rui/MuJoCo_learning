@@ -1,0 +1,26 @@
+<mujoco model="planar_3dof">
+  <!-- 本例只校验几何位姿；设为零重力，让模型文件保持最小配置 -->
+  <option gravity="0 0 0"/>
+
+  <worldbody>
+    <body name="link1" pos="0 0 0">
+      <!-- 三个关节都绕 z 轴旋转，对齐 fk_planar 里的 rot_z(theta_i) -->
+      <joint name="j1" type="hinge" axis="0 0 1"/>
+      <geom type="capsule" fromto="0 0 0 0.3 0 0" size="0.02"/>
+
+      <!-- pos 是 link2 相对 link1 的固定偏置，对应 trans(L1, 0, 0) -->
+      <body name="link2" pos="0.3 0 0">
+        <joint name="j2" type="hinge" axis="0 0 1"/>
+        <geom type="capsule" fromto="0 0 0 0.25 0 0" size="0.018"/>
+
+        <!-- pos 是 link3 相对 link2 的固定偏置，对应 trans(L2, 0, 0) -->
+        <body name="link3" pos="0.25 0 0">
+          <joint name="j3" type="hinge" axis="0 0 1"/>
+          <geom type="capsule" fromto="0 0 0 0.15 0 0" size="0.015"/>
+          <!-- site 放在第三节末端，对应 trans(L3, 0, 0) 后的末端点 -->
+          <site name="end_site" pos="0.15 0 0" size="0.01"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

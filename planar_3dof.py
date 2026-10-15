@@ -1,4 +1,5 @@
 import mujoco
+import numpy as np
 
 model = mujoco.MjModel.from_xml_path('planar_3dof.xml')
 data  = mujoco.MjData(model)
